@@ -11,6 +11,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+
+    <main class="content">
+      <% flash.each do |type, message| %>
+        <%= content_tag(:div, message, class: "flash #{type}") %>
+      <% end %>
+  
+      <%= yield %>
+    </main>
   </body>
 </html>
