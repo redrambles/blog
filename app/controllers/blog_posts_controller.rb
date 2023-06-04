@@ -46,5 +46,7 @@ class BlogPostsController < ApplicationController
 
   def set_post
     @blog_post = BlogPost.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
   end
 end

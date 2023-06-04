@@ -1,11 +1,12 @@
 <%= form_with(model: blog_post) do |form| %>
 
- <% if blog_post.errors.any? %>
-    <%= render "shared/errors", object:blog_post%>
+ <% if form.object.errors.any? %>
+    <%= render "shared/errors", object:blog_post %>
   <% end %>
 
   <%= form.label "title" %>
   <%= form.text_field :title %>
+
 
   <%= form.label "body" %>
   <%= form.text_area :body %>

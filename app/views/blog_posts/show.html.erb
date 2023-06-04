@@ -4,4 +4,4 @@
 <%= link_to "Back to All Posts", blog_posts_path %>
 
 <%= link_to "Edit", edit_blog_post_path(@blog_post)%>
-<%= link_to "Delete", blog_post_path(@blog_post), data: { turbo_method: :delete, turbo_confirm: "You sure??"} %>
+<%= button_to "Delete", @blog_post, method: :delete, data: { turbo_confirm: "You sure??" } %>
