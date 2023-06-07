@@ -1,17 +1,21 @@
-<%= form_with(model: blog_post) do |form| %>
+<%= form_with(model: blog_post, class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-4xl mx-auto") do |form| %>
 
- <% if form.object.errors.any? %>
-    <%= render "shared/errors", object:blog_post %>
+  <% if form.object.errors.any? %>
+    <%= render "shared/errors", object: blog_post %>
   <% end %>
 
-  <%= form.label "title" %>
-  <%= form.text_field :title %>
+  <div class="mb-4">
+    <%= form.label :title, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
 
+  <div class="mb-6">
+    <%= form.label :body, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_area :body, class: "h-40 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
 
-  <%= form.label "body" %>
-  <%= form.text_area :body %>
+  <div class="flex items-center justify-center">
+    <%= form.submit "Submit", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
 
-  <%= form.submit %>
 <% end %>
-
-

@@ -1,14 +1,16 @@
-<header>
-
-  <nav>
-    <%= link_to "Blog Posts", blog_posts_path %>
-    <% if user_signed_in? %>
-      <%# link_to "Profile", edit_user_registration_path  %>
-      <%= link_to 'New Blog Post', new_blog_post_path %>
-     <%= button_to "Log Out", destroy_user_session_path, method: :delete, data: {turbo_confirm: "Are you sure?"} %>
-    <%# else %>
-      <%# <%= link_to "Log In", new_user_session_path %> 
-      <%# <%= link_to "Sign Up", new_user_registration_path %>
-    <% end %>
+<header class="bg-gray-800 py-4 mb-8 ">
+  <nav class="sm:flex sm:gap-3 justify-between items-center max-w-7xl w-11/12 mx-auto">
+    <div>
+      <%= link_to "Blog Posts", blog_posts_path, class: "text-white text-lg font-bold px-4 py-2" %>
+    </div>
+    <div class="flex gap-3">
+      <% if user_signed_in? %>
+        <%= link_to 'New Blog Post', new_blog_post_path, class: "text-white hover:text-gray-300 px-4 py-2 rounded" %>
+        <%= button_to "Log Out", destroy_user_session_path, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "text-white hover:text-gray-300 px-4 py-2 rounded" %>
+      <% else %>
+        <%#= link_to "Log In", new_user_session_path, class: "text-white hover:text-gray-300 px-4 py-2 rounded" %> 
+        <%#= link_to "Sign Up", new_user_registration_path, class: "text-white hover:text-gray-300 px-4 py-2 rounded %>
+      <% end %>
+    </div>
   </nav>
 </header>
