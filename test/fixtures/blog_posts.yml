@@ -1,9 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  body: MyText
+no_body:
+  title: My third blog post
 
-two:
-  title: MyString
-  body: MyText
+no_title:
+  body: This is the body of my fourth blog post. Tada.
+
+draft:
+  title: This is a draft post
+  body: This is the body of my draft post. Tada.
+  published_at: null
+
+published:
+  title: This is a published post
+  body: This is the body of my published post. Tada.
+  published_at: <%= 1.day.ago %>
+
+scheduled:
+  title: This is a scheduled post
+  body: This is the body of my scheduled post. Tada.
+  published_at: <%= 1.day.from_now %>
