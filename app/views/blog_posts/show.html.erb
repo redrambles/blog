@@ -1,6 +1,6 @@
 <h2><%= @blog_post.title %></h2>
 <p><%= @blog_post.body %></p>
-
+<%= output_time_info(@blog_post) %>
 <section class="actions sm:flex sm:gap-3">
 <%= link_to "Back to All Posts", blog_posts_path, class:"inline-block bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 my-2 rounded" %>
 
