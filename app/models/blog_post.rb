@@ -1,13 +1,12 @@
 class BlogPost < ApplicationRecord
+  has_rich_text :content
+
   validates :title, presence: true
-  validates :body, presence: true, length: {minimum: 10}
+  validates :content, presence: true, length: {minimum: 10}
 
   scope :sorted, -> { order(created_at: :desc, updated_at: :desc) }
-
   scope :draft, -> { where(published_at: nil) }
-
   scope :published, -> { where("published_at <= ?", Time.current) }
-
   scope :scheduled, -> { where("published_at > ?", Time.current) }
 
   def draft?
