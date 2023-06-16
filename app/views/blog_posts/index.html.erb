@@ -14,7 +14,9 @@
   <%= output_time_info(blog) %>
 <% end %>
 
-<footer class="my-14 flex justify-center">
-  <%# Using double equal which will not sanitize html - but we trust the Pagy gem %>
-  <%== pagy_nav(@pagy)%>
-</footer>
+<% if @pagy.count > @pagy.items %>
+  <footer class="my-14 flex justify-center">
+    <%# Using double equal which will not sanitize html - but we trust the Pagy gem %>
+    <%== pagy_nav(@pagy)%>
+  </footer>
+<% end %>
