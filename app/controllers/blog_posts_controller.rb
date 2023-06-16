@@ -8,6 +8,7 @@ class BlogPostsController < ApplicationController
     else
       BlogPost.published.sorted
     end
+    @pagy, @blog_posts = pagy(@blog_posts, items: 10)
   end
 
   def show

@@ -10,3 +10,9 @@ user.update!(
   password: "meemoo",
   password_confirmation: "meemoo"
 )
+
+# This will ADD to your current posts, not replace them.
+# 100.times do |n|
+#   blog_post = BlogPost.where(title: "Blog Post #{n + 1}").first_or_initialize
+#   blog_post.update(content: "This is the body of blog post #{n + 1}", published_at: Time.current)
+# end
