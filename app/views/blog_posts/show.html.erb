@@ -1,4 +1,7 @@
 <h2><%= @blog_post.title %></h2>
+<% if @blog_post.cover_image.present? %>
+  <%= image_tag @blog_post.cover_image %>
+<% end %>
 <p><%= @blog_post.content %></p>
 <%= output_time_info(@blog_post) %>
 
