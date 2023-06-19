@@ -20,6 +20,7 @@ class BlogPostsController < ApplicationController
 
   def new
     @blog_post = BlogPost.new
+    # This is to pre-populate the published_at field with the current time so you can hit 'Create' without having to change the date
     @blog_post.published_at = Time.current
   end
 
